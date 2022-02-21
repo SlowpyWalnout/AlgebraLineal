@@ -26,7 +26,10 @@ for j in range(0,orden+1):
 x = [0,0,0]
 for i in range(orden,0,-1):
 	suma=0
+	print("x", x, "matriz", matriz)
 	for j in range(i,orden):
+		print("for j-i", i, j, matriz[i-1][j])
+
 		suma=suma+matriz[i-1][j]*x[j]
 	#Obtener los valores de las variables
 	x[i-1]=((matriz[i-1][orden]-suma)/matriz[i-1][i-1])	
