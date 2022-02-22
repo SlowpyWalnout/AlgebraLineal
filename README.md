@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Escribir un programa que reciba $n$ y un sistema de $n$ ecuaciones con $n$ variables, y que regrese la solución del sistema.
+Escribir un programa que reciba `n` y un sistema de $n$ ecuaciones con `n` variables, y que regrese la solución del sistema.
 
 ## Warning
 
