@@ -20,8 +20,7 @@ def dividir_por_diagonal(matriz, n):
                     # Restamos a cada posición de la fila
                     matriz[i][k]=matriz[i][k]-division*matriz[j][k];
                 
-                #matriz[1][1]=matriz[1][1]-(matriz[1][0]/matriz[0][0])*matriz[0][1]
-                # cuando i = 1, j= 0, k = 0
+                
 
 def generar_x(n):
     x = []
