@@ -1,7 +1,6 @@
 
 
 
-# pasar en una función las líneas 16-24
 
 # donde matriz es una lista de dos dimensiones con las filas de la matriz
 # y n = len(matriz)
@@ -28,7 +27,7 @@ def generar_x(n):
         x.append(0)
     return x
 
-# pasar en una función las líneas 27-32
+
 def obtener_vector_resultados(matriz, n, x):
     # Recorremos las columnas en orden inverso
     for i in range(n,0,-1):
