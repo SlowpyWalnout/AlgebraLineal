@@ -1,6 +1,5 @@
 
 
-from shutil import ExecError
 
 
 class ZeroDivException(Exception):
