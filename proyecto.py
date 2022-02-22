@@ -1,28 +1,29 @@
-
-
-
+"""
+    Escribir un programa que reciba n y un sistema de n ecuaciones con n variables,
+    y que regrese la solución del sistema.
+"""
 
 class ZeroDivException(Exception):
     def __init__(self, line):
         super().__init__()
         self.line = line
 
-# intermbiar la fila i con la siguiente a menos que que la fila i sea 
+# intercambiar la fila i con la siguiente a menos que que la fila i sea 
 # la última; en este caso, se intercambiará con la anterior
-def intercambiar_fila(i, arr):
-    n = len(arr)
-    i_t = arr[i]
-    t = 0
+def intercambiar_fila(i, matriz):
+    n = len(matriz)
+    fila = matriz[i]
+    fila_destino = []
+    n_fila_destino = 0
     if  n == i:
-        t =arr[i-1]
+        n_fila_destino = i-1
+        fila_destino = matriz[n_fila_destino]
     else:    
-        t =arr[i+1]
+        n_fila_destino = i+1
+        fila_destino = matriz[n_fila_destino]
 
-    arr[i] = t
-    arr[i+1] = i_t
-
-
-    return (arr, 1)
+    matriz[i] = fila_destino
+    matriz[n_fila_destino] = fila
 
 
 # donde matriz es una lista de dos dimensiones con las filas de la matriz
@@ -48,7 +49,7 @@ def dividir_por_diagonal(matriz, n):
                     matriz[i][k]=matriz[i][k]-division*matriz[j][k];
 
                 
-
+# Generamos un "vector" vacío con longitud n
 def generar_x(n):
     x = []
     for _ in range(0, n):
@@ -71,7 +72,6 @@ def obtener_vector_resultados(matriz, n, x):
             raise ZeroDivException(i-1)
         
         x[i-1]=((matriz[i-1][n]-suma)/dividendo)	
-       # print("i={0} x={1} suma={2}".format(i, x, suma))
 
 ########################### PRUEBAS ###############################
 """
@@ -98,5 +98,6 @@ except ZeroDivException as err:
     obtener_vector_resultados(matriz, n, x)
 
 
-print(x)
+for i in range(0,n):
+	print("x_"+str(i+1)+" = "+str(x[i]))
 
