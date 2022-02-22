@@ -34,23 +34,25 @@ def recorrer_matriz_2(matriz, n, x):
     # Recorremos las columnas en orden inverso
     for i in range(n,0,-1):
         suma=0
-        print("posicion de i", i, " x", x, " suma", suma)
-        
-    #Recorre las 
+                
+    #Recorre las...
         for j in range(i,n):
-            print("matriz[i-1][j]",matriz[i-1][j])
+            
             suma=suma+matriz[i-1][j]*x[j]
-        #Obtener los valores de las variables
+            print(suma)
+        #Insertar las respuestas en x
+        
         x[i-1]=((matriz[i-1][n]-suma)/matriz[i-1][i-1])	
+        print("i={0} x={1} suma={2}".format(i, x, suma))
 
 ########################### PRUEBAS ###############################
 
-matriz = [[3,2,3,3], [1,3,1,-6], [5,1,3,12]]
+matriz = [[3,2,3,3,10], [3,1,1,-6,2], [5,1,3,12,6], [-4,-4,8,1,5]]
 n = len(matriz)
-
+print("Antes la fn 1", matriz)
 recorrer_matriz_1(matriz, n)
-
+print("Después de la fn 1", matriz)
 x = generar_x(n)
 
 recorrer_matriz_2(matriz, n, x)
-
+print(x)
